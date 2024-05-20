@@ -50,8 +50,8 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git@github.com:bsantanna/learnmate.git</connection>
-    <developerConnection>scm:git:git@github.com:bsantanna/learnmate.git</developerConnection>
+    <connection>scm:git:https://github.com/bsantanna/learnmate.git</connection>
+    <developerConnection>scm:git:https://github.com/bsantanna/learnmate.git</developerConnection>
     <url>https://github.com/bsantanna/learnmate</url>
     <tag>HEAD</tag>
   </scm>

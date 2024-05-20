@@ -24,7 +24,7 @@ catchError {
 
       deleteDir()
 
-      git url: ORIGIN_GIT_URL, tag: params.TAG
+      git url: ORIGIN_GIT_URL, tag: params.TAG, branch:"main"
 
       withCredentials([string(credentialsId: SONAR_CREDENTIALS_ID, variable: "SONAR_CREDENTIALS")]) {
         env.SONAR_CREDENTIALS = SONAR_CREDENTIALS

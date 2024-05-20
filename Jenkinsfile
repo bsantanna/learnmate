@@ -24,7 +24,16 @@ catchError {
 
       deleteDir()
 
-      git url: ORIGIN_GIT_URL, branch: "refs/tags/${params.TAG}"
+      checkout(
+        [
+          $class: 'GitSCM',
+          branches: [[name: "refs/tags/${params.TAG}"]],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [],
+          submoduleCfg: [],
+          userRemoteConfigs: [[url: ORIGIN_GIT_URL]]
+        ]
+      )
 
       withCredentials([string(credentialsId: SONAR_CREDENTIALS_ID, variable: "SONAR_CREDENTIALS")]) {
         env.SONAR_CREDENTIALS = SONAR_CREDENTIALS

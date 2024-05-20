@@ -1,0 +1,5 @@
+avro-python3
+langchain
+opensearch-py
+pytest
+flake8

@@ -7,6 +7,7 @@ on:
 
 env:
   JAVA_VERSION: '22'
+  JAVA_DISTRO: 'temurin'
 
 jobs:
   Build:
@@ -19,6 +20,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DISTRO }}
           cache: 'maven'
 
       - name: Build with Maven

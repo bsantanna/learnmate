@@ -24,7 +24,7 @@ catchError {
 
       deleteDir()
 
-      git url: ORIGIN_GIT_URL, tag: params.TAG, branch:"main"
+      git url: ORIGIN_GIT_URL, branch: "refs/tags/${params.TAG}"
 
       withCredentials([string(credentialsId: SONAR_CREDENTIALS_ID, variable: "SONAR_CREDENTIALS")]) {
         env.SONAR_CREDENTIALS = SONAR_CREDENTIALS
@@ -32,8 +32,8 @@ catchError {
 
       withMaven(maven: 'default', options: [artifactsPublisher(disabled: true)]) {
         withPythonEnv('python3') {
-          sh 'pip install --upgrade pip'
-          sh 'pip install -r requirements.txt'
+          sh 'pip install --upgrade pip --quiet'
+          sh 'pip install -r requirements.txt --quiet'
           sh 'mvn clean verify sonar:sonar -Pcoverage -Dsonar.host.url=${SONAR_URL} -Dsonar.token=${SONAR_CREDENTIALS}'
           sh 'mvn package -DskipTests'
         }

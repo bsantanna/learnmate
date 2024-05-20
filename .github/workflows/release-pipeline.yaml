@@ -20,10 +20,10 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to release (ex. 2024-01)'
+        description: 'Version to release'
         required: true
       next:
-        description: 'Next version to release (ex. 2024-02)'
+        description: 'Next version to release'
         required: true
 
 env:

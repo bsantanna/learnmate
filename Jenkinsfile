@@ -2,8 +2,7 @@
 
 final BUILD_NODE_SELECTOR="build"
 final DEPLOY_NODE_SELECTOR="deploy"
-final ORIGIN_GIT_CREDENTIALS_ID = "github_credentials"
-final ORIGIN_GIT_URL = "git@github.com:bsantanna/learnmate.git"
+final ORIGIN_GIT_URL = "https://github.com/bsantanna/learnmate.git"
 final SONAR_CREDENTIALS_ID = "sonar_credentials"
 final SONAR_URL = "https://secure.btech.software/sonarqube"
 
@@ -25,7 +24,7 @@ catchError {
 
       deleteDir()
 
-      git credentialsId: ORIGIN_GIT_CREDENTIALS_ID, url: ORIGIN_GIT_URL, tag: params.TAG
+      git url: ORIGIN_GIT_URL, tag: params.TAG
 
       withCredentials([string(credentialsId: SONAR_CREDENTIALS_ID, variable: "SONAR_CREDENTIALS")]) {
         env.SONAR_CREDENTIALS = SONAR_CREDENTIALS

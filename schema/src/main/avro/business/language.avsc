@@ -1,10 +1,12 @@
 {
   "namespace": "software.btech.learnmate.schema.business",
   "type": "enum",
-  "name": "ProfileType",
+  "name": "Language",
   "symbols": [
-    "Admin",
-    "Author",
-    "Student"
+    "Dutch",
+    "English",
+    "Italian",
+    "Portuguese",
+    "Spanish"
   ]
 }

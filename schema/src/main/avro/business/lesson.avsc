@@ -1,0 +1,19 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "record",
+  "name": "Lesson",
+  "fields": [
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "objective",
+      "type": "string"
+    },
+    {
+      "name": "level",
+      "type": "software.btech.learnmate.schema.business.CEFRLevel"
+    }
+  ]
+}

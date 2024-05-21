@@ -1,11 +1,15 @@
 {
-  "namespace": "software.btech.learnmate.schema.domain.business",
+  "namespace": "software.btech.learnmate.schema.business",
   "type": "record",
   "name": "Profile",
   "fields": [
     {
-      "name": "supplier",
-      "type": "software.btech.learnmate.schema.domain.business.ProfileType"
+      "name": "type",
+      "type": "software.btech.learnmate.schema.business.ProfileType"
+    },
+    {
+      "name": "personalInfo",
+      "type": "software.btech.learnmate.schema.business.PersonalInfo"
     }
   ]
 }

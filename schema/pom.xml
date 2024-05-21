@@ -65,7 +65,10 @@
               <goal>schema</goal>
             </goals>
             <configuration>
-              <!--<imports></imports>-->
+              <imports>
+                <import>${project.basedir}/src/main/avro/business/profile-type.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/profile.avsc</import>
+              </imports>
               <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
             </configuration>
           </execution>

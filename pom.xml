@@ -64,7 +64,7 @@
     <freemarker.version>2.3.32</freemarker.version>
     <gson.version>2.10.1</gson.version>
     <jacoco.version>0.8.11</jacoco.version>
-    <java.version>22</java.version>
+    <java.version>21</java.version>
     <jib.version>3.4.0</jib.version>
     <jreleaser.version>1.8.0</jreleaser.version>
     <kafka-avro-serializer.version>7.5.2</kafka-avro-serializer.version>

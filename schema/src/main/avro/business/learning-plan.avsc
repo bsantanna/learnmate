@@ -1,0 +1,26 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "record",
+  "name": "LearningPlan",
+  "fields": [
+    {
+      "name": "learningPlanId",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "objective",
+      "type": "string"
+    },
+    {
+      "name": "lessons",
+      "type": {
+        "type": "array",
+        "items": "software.btech.learnmate.schema.business.Lesson"
+      }
+    }
+  ]
+}

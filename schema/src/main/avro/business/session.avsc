@@ -1,0 +1,18 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "record",
+  "name": "Session",
+  "fields": [
+    {
+      "name": "lessonId",
+      "type": "string"
+    },
+    {
+      "name": "messageHistory",
+      "type": {
+        "type": "array",
+        "items": "software.btech.learnmate.schema.ai.Message"
+      }
+    }
+  ]
+}

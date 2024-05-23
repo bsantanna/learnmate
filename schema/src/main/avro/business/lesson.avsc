@@ -1,0 +1,34 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "record",
+  "name": "Lesson",
+  "fields": [
+    {
+      "name": "lessonId",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "objective",
+      "type": "string"
+    },
+    {
+      "name": "level",
+      "type": "software.btech.learnmate.schema.business.CEFRLevel"
+    },
+    {
+      "name": "wordList",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "lessonPrompt",
+      "type": "software.btech.learnmate.schema.business.LessonPrompt"
+    }
+  ]
+}

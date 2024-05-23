@@ -1,0 +1,29 @@
+{
+  "namespace": "software.btech.learnmate.schema.ai",
+  "type": "record",
+  "name": "InstructionPrompt",
+  "fields": [
+    {
+      "name": "systemMessage",
+      "type": "software.btech.learnmate.schema.ai.Message"
+    },
+    {
+      "name": "inputMessage",
+      "type": "software.btech.learnmate.schema.ai.Message"
+    },
+    {
+      "name": "inputParameters",
+      "type": {
+        "type": "map",
+        "values": "string"
+      }
+    },
+    {
+      "name": "fewShotExamples",
+      "type": {
+        "type": "array",
+        "items": "software.btech.learnmate.schema.ai.Message"
+      }
+    }
+  ]
+}

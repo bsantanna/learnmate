@@ -1,0 +1,30 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "record",
+  "name": "PersonalInfo",
+  "fields": [
+    {
+      "name": "handle",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "preferredLanguage",
+      "type": "software.btech.learnmate.schema.business.Language"
+    },
+    {
+      "name": "birthDate",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    }
+  ]
+}

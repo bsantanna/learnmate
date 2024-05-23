@@ -1,0 +1,15 @@
+{
+  "namespace": "software.btech.learnmate.schema.ai",
+  "type": "record",
+  "name": "Message",
+  "fields": [
+    {
+      "name": "messageType",
+      "type": "software.btech.learnmate.schema.ai.MessageType"
+    },
+    {
+      "name": "template",
+      "type": "string"
+    }
+  ]
+}

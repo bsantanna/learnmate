@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    LearnMate - AI Learning Assistant
+    Copyright (C) 2024  Bruno César Brito Sant'Anna
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses />.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>software.btech.learnmate</groupId>
+    <artifactId>learnmate</artifactId>
+    <version>1.3.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>schema</artifactId>
+  <name>LearnMate - Schema</name>
+  <dependencies>
+
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro-compiler</artifactId>
+      <version>${avro.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro-ipc</artifactId>
+      <version>${avro.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro-maven-plugin</artifactId>
+      <version>${avro.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.avro</groupId>
+        <artifactId>avro-maven-plugin</artifactId>
+        <version>${avro.version}</version>
+        <executions>
+
+          <execution>
+            <id>schemas</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>schema</goal>
+            </goals>
+            <configuration>
+              <imports>
+                <import>${project.basedir}/src/main/avro/ai/message-type.avsc</import>
+                <import>${project.basedir}/src/main/avro/ai/message.avsc</import>
+                <import>${project.basedir}/src/main/avro/ai/instruction-prompt.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/language.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/cefr-level.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/session.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/lesson-prompt.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/lesson.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/learning-plan.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/learning-program.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/personal-info.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/profile-type.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/profile.avsc</import>
+              </imports>
+              <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>protocols</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>protocol</goal>
+            </goals>
+            <configuration>
+              <sourceDirectory>${project.basedir}/src/main/avro</sourceDirectory>
+              <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+              <includes>
+                <include>**/*.avpr</include>
+              </includes>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${project.basedir}/src/main/java</directory>
+              <includes>
+                <include>**/*.java</include>
+              </includes>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

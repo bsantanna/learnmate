@@ -1,0 +1,27 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "record",
+  "name": "LessonPrompt",
+  "fields": [
+    {
+      "name": "explanation",
+      "type": "software.btech.learnmate.schema.ai.InstructionPrompt"
+    },
+    {
+      "name": "exercise",
+      "type": "software.btech.learnmate.schema.ai.InstructionPrompt"
+    },
+    {
+      "name": "quiz",
+      "type": "software.btech.learnmate.schema.ai.InstructionPrompt"
+    },
+    {
+      "name": "examples",
+      "type": "software.btech.learnmate.schema.ai.InstructionPrompt"
+    },
+    {
+      "name": "exceptions",
+      "type": "software.btech.learnmate.schema.ai.InstructionPrompt"
+    }
+  ]
+}

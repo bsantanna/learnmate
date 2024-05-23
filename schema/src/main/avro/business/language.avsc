@@ -1,0 +1,12 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "enum",
+  "name": "Language",
+  "symbols": [
+    "Dutch",
+    "English",
+    "Italian",
+    "Portuguese",
+    "Spanish"
+  ]
+}

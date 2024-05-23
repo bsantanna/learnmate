@@ -1,0 +1,10 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "enum",
+  "name": "ProfileType",
+  "symbols": [
+    "Admin",
+    "Author",
+    "Student"
+  ]
+}

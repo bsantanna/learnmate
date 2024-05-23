@@ -16,7 +16,11 @@
       "type": "software.btech.learnmate.schema.ai.InstructionPrompt"
     },
     {
-      "name": "feedback",
+      "name": "examples",
+      "type": "software.btech.learnmate.schema.ai.InstructionPrompt"
+    },
+    {
+      "name": "exceptions",
       "type": "software.btech.learnmate.schema.ai.InstructionPrompt"
     }
   ]

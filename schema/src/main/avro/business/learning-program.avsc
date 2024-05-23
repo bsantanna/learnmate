@@ -1,0 +1,51 @@
+{
+  "namespace": "software.btech.learnmate.schema.business",
+  "type": "record",
+  "name": "LearningProgram",
+  "fields": [
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "refAuthor",
+      "type": "string"
+    },
+    {
+      "name": "targetLanguage",
+      "type": "software.btech.learnmate.schema.business.Language"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "startDate",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    },
+    {
+      "name": "refLearningPlans",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "refLessonsComplete",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "sessionHistory",
+      "type": {
+        "type": "array",
+        "items": "software.btech.learnmate.schema.business.Session"
+      }
+    }
+  ]
+}

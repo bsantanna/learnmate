@@ -20,6 +20,13 @@
       "type": "software.btech.learnmate.schema.business.CEFRLevel"
     },
     {
+      "name": "wordList",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
       "name": "lessonPrompt",
       "type": "software.btech.learnmate.schema.business.LessonPrompt"
     }

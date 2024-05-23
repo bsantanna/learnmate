@@ -12,24 +12,10 @@
       "type": "software.btech.learnmate.schema.business.PersonalInfo"
     },
     {
-      "name": "learningPlansEnrolled",
+      "name": "learningPrograms",
       "type": {
         "type": "array",
-        "items": "string"
-      }
-    },
-    {
-      "name": "learningPlansCompleted",
-      "type": {
-        "type": "array",
-        "items": "string"
-      }
-    },
-    {
-      "name": "sessionHistory",
-      "type": {
-        "type": "array",
-        "items": "software.btech.learnmate.schema.business.Session"
+        "items": "software.btech.learnmate.schema.business.LearningProgram"
       }
     }
   ]

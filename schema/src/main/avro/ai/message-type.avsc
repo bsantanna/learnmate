@@ -1,0 +1,10 @@
+{
+  "namespace": "software.btech.learnmate.schema.ai",
+  "type": "enum",
+  "name": "MessageType",
+  "symbols": [
+    "System",
+    "Human",
+    "Assistant"
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "namespace": "software.btech.learnmate.schema.business",
   "type": "record",
-  "name": "Lesson",
+  "name": "LearningPlan",
   "fields": [
     {
-      "name": "lessonId",
+      "name": "learningPlanId",
       "type": "string"
     },
     {
@@ -16,12 +16,11 @@
       "type": "string"
     },
     {
-      "name": "level",
-      "type": "software.btech.learnmate.schema.business.CEFRLevel"
-    },
-    {
-      "name": "lessonPrompt",
-      "type": "software.btech.learnmate.schema.business.LessonPrompt"
+      "name": "lessons",
+      "type": {
+        "type": "array",
+        "items": "software.btech.learnmate.schema.business.Lesson"
+      }
     }
   ]
 }

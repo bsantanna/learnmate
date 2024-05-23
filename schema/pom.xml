@@ -66,8 +66,14 @@
             </goals>
             <configuration>
               <imports>
+                <import>${project.basedir}/src/main/avro/ai/message-type.avsc</import>
+                <import>${project.basedir}/src/main/avro/ai/message.avsc</import>
+                <import>${project.basedir}/src/main/avro/ai/instruction-prompt.avsc</import>
                 <import>${project.basedir}/src/main/avro/business/cefr-level.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/session.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/lesson-prompt.avsc</import>
                 <import>${project.basedir}/src/main/avro/business/lesson.avsc</import>
+                <import>${project.basedir}/src/main/avro/business/learning-plan.avsc</import>
                 <import>${project.basedir}/src/main/avro/business/language.avsc</import>
                 <import>${project.basedir}/src/main/avro/business/personal-info.avsc</import>
                 <import>${project.basedir}/src/main/avro/business/profile-type.avsc</import>

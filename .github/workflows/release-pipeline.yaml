@@ -68,7 +68,7 @@ jobs:
 
   # Collect all release candidates and release
   release:
-    needs: [ cli ]
+    needs: [ prepare ]
     runs-on: ubuntu-latest
     steps:
       - name: 'Check out repository'

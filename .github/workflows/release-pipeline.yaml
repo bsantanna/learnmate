@@ -66,32 +66,6 @@ jobs:
           NEXT_VERSION=${{ github.event.inputs.next }}
           mvn -B -ntp release:prepare -B -Dusername=bsantanna -Dpassword=${{ secrets.LEARNMATE_PAT }} -Dtag=$RELEASE_VERSION -DreleaseVersion=$RELEASE_VERSION -DdevelopmentVersion="${NEXT_VERSION}-SNAPSHOT"
 
-  # Build Project
-  cli:
-    needs: [ prepare ]
-    name: 'Build Artifact on ${{ matrix.os }}'
-    strategy:
-      fail-fast: true
-      matrix:
-        os: [ ubuntu-latest ]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - name: 'Check out repository'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.version }}
-          fetch-depth: 0
-
-      - name: 'Cache Maven packages'
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-maven-
-
-      - name: 'Package with release profile'
-        run: mvn -B -ntp package
-
   # Collect all release candidates and release
   release:
     needs: [ cli ]

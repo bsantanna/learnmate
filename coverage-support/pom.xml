@@ -30,11 +30,19 @@
   <name>LearnMate - Coverage Support</name>
 
   <dependencies>
+
+    <dependency>
+      <groupId>software.btech.learnmate</groupId>
+      <artifactId>foundation</artifactId>
+      <version>${parent.version</version>
+    </dependency>
+
     <dependency>
       <groupId>software.btech.learnmate</groupId>
       <artifactId>web</artifactId>
       <version>${parent.version</version>
     </dependency>
+
   </dependencies>
 
 </project>

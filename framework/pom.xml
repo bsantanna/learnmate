@@ -15,6 +15,7 @@
   <packaging>pom</packaging>
 
   <modules>
+    <module>test-support</module>
   </modules>
 
 </project>

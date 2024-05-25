@@ -33,7 +33,7 @@
 
     <dependency>
       <groupId>software.btech.learnmate</groupId>
-      <artifactId>schema</artifactId>
+      <artifactId>foundation</artifactId>
       <version>${parent.version}</version>
     </dependency>
 
@@ -41,17 +41,6 @@
       <groupId>org.apache.avro</groupId>
       <artifactId>avro-ipc-jetty</artifactId>
       <version>${avro.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.opensearch.client</groupId>
-      <artifactId>opensearch-rest-client</artifactId>
-      <version>${opensearch-rest-client.version}</version>
     </dependency>
 
     <dependency>

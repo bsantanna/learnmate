@@ -34,6 +34,7 @@
   <packaging>pom</packaging>
 
   <modules>
+    <module>foundation</module>
     <module>test-support</module>
   </modules>
 

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!--
+/*
     LearnMate - AI Learning Assistant
     Copyright (C) 2024 - LearnMate Developers
 
@@ -16,25 +14,22 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses />.
--->
+ */
 
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+package software.btech.learnmate.api.web;
 
-  <parent>
-    <groupId>software.btech.learnmate</groupId>
-    <artifactId>learnmate</artifactId>
-    <version>1.4.0-SNAPSHOT</version>
-  </parent>
-  <modelVersion>4.0.0</modelVersion>
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
-  <name>LearnMate - Framework</name>
-  <artifactId>framework</artifactId>
-  <packaging>pom</packaging>
+@SpringBootApplication
+@ComponentScan(
+  basePackages = {"software.btech.learnmate"}
+)
+public class WebApplication {
 
-  <modules>
-    <module>test-support</module>
-  </modules>
+  public static void main(String[] args) {
+    SpringApplication.run(WebApplication.class, args);
+  }
 
-</project>
+}

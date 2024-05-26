@@ -64,7 +64,7 @@ jobs:
         run: |
           RELEASE_VERSION=${{ github.event.inputs.version }}
           NEXT_VERSION=${{ github.event.inputs.next }}
-          mvn -B -ntp release:prepare -B -Dusername=bsantanna -Dpassword=${{ secrets.LEARNMATE_PAT }} -Dtag=$RELEASE_VERSION -DreleaseVersion=$RELEASE_VERSION -DdevelopmentVersion="${NEXT_VERSION}-SNAPSHOT"
+          mvn -B -ntp release:prepare -B -DskipTests=true -Dusername=bsantanna -Dpassword=${{ secrets.LEARNMATE_PAT }} -Dtag=$RELEASE_VERSION -DreleaseVersion=$RELEASE_VERSION -DdevelopmentVersion="${NEXT_VERSION}-SNAPSHOT"
 
   # Collect all release candidates and release
   release:

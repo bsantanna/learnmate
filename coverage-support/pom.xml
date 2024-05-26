@@ -24,7 +24,7 @@
   <parent>
     <groupId>software.btech.learnmate</groupId>
     <artifactId>learnmate</artifactId>
-    <version>1.4.0-SNAPSHOT</version>
+    <version>1.5.0-SNAPSHOT</version>
   </parent>
   <artifactId>coverage-support</artifactId>
   <name>LearnMate - Coverage Support</name>
@@ -34,13 +34,13 @@
     <dependency>
       <groupId>software.btech.learnmate</groupId>
       <artifactId>foundation</artifactId>
-      <version>${parent.version</version>
+      <version>${parent.version}</version>
     </dependency>
 
     <dependency>
       <groupId>software.btech.learnmate</groupId>
       <artifactId>web</artifactId>
-      <version>${parent.version</version>
+      <version>${parent.version}</version>
     </dependency>
 
   </dependencies>

@@ -16,39 +16,44 @@
     along with this program.  If not, see <https://www.gnu.org/licenses />.
  */
 
-package software.btech.learnmate.framework.foundation.tracing;
+package software.btech.learnmate.framework.foundation.tracing.error;
 
-import io.micrometer.tracing.Tracer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import software.btech.learnmate.framework.foundation.tracing.TraceIdService;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Answers.RETURNS_DEEP_STUBS;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class TraceIdServiceTest {
+class ApplicationExceptionHandlerTest {
 
-  @Mock(answer = RETURNS_DEEP_STUBS)
-  private static Tracer tracer;
+  @Mock
+  private TraceIdService traceIdService;
 
   @InjectMocks
-  private TraceIdService underTest;
+  private ApplicationExceptionHandler underTest;
 
   @Test
-  void testGetTraceId() {
-    // Given
-    var expectedTraceId = "test-trace-id";
-    when(tracer.currentSpan().context().traceId()).thenReturn(expectedTraceId);
+  void testHandleWebApplicationException() {
+    // given
+    var expectedTraceId = "trace-id";
+    when(traceIdService.getTraceId()).thenReturn(expectedTraceId);
 
-    // When
-    var resultTraceId = underTest.getTraceId();
+    var message = "message";
+    var status = HttpStatus.I_AM_A_TEAPOT;
+    var exception = new WebApplicationException(message, status);
 
-    // Then
-    assertEquals(expectedTraceId, resultTraceId);
+    // when
+    var responseEntity = underTest.handleWebApplicationException(exception);
+
+    // then
+    assertNotNull(responseEntity);
+
   }
 
 }

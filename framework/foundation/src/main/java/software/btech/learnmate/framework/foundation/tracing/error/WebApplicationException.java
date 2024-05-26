@@ -16,9 +16,24 @@
     along with this program.  If not, see <https://www.gnu.org/licenses />.
  */
 
-package software.btech.learnmate.framework.foundation.tracing;
+package software.btech.learnmate.framework.foundation.tracing.error;
 
-public interface ITraceIdService {
-  String getTraceId();
+import lombok.Getter;
+import org.springframework.http.HttpStatus;
+
+@Getter
+public class WebApplicationException extends RuntimeException {
+
+  private final HttpStatus httpStatus;
+
+  public WebApplicationException(String message, HttpStatus httpStatus) {
+    super(message);
+    this.httpStatus = httpStatus;
+  }
+
+  public WebApplicationException(String message, HttpStatus httpStatus, Throwable cause) {
+    super(message, cause);
+    this.httpStatus = httpStatus;
+  }
 
 }

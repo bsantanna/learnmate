@@ -33,10 +33,17 @@
 
     <dependency>
       <groupId>software.btech.learnmate</groupId>
+      <artifactId>foundation</artifactId>
+      <version>${parent.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>software.btech.learnmate</groupId>
       <artifactId>test-support</artifactId>
       <version>${parent.version}</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>

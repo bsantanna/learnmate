@@ -1,0 +1,32 @@
+---
+
+logging:
+  level:
+    org.apache.camel: INFO
+
+---
+
+security:
+  cors:
+    allowed-origins: "https://localhost,capacitor://localhost"
+  csrf:
+    enabled: false
+  debug:
+    enabled: false
+
+---
+
+okta:
+  oauth2:
+    issuer: "https://learnmate.eu.auth0.com/"
+    audience: "https://learnmate.btech.software/api/v1"
+
+---
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health"
+
+---

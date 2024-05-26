@@ -1,0 +1,32 @@
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+
+security:
+  cors:
+    allowed-origins: "http://localhost:8100"
+  csrf:
+    enabled: false
+  debug:
+    enabled: true
+
+---
+
+okta:
+  oauth2:
+    audience: "http://localhost:8091/api/v1"
+
+---
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "beans,health,info,metrics,loggers,prometheus"
+
+---

@@ -3,6 +3,7 @@
 final BUILD_NODE_SELECTOR="build"
 final DEPLOY_NODE_SELECTOR="deploy"
 final ORIGIN_GIT_URL = "https://github.com/bsantanna/learnmate.git"
+final REGISTRY_ENDPOINT= "secure.btech.software"
 final SONAR_CREDENTIALS_ID = "sonar_credentials"
 final SONAR_URL = "https://secure.btech.software/sonarqube"
 
@@ -20,6 +21,8 @@ catchError {
 
     node(BUILD_NODE_SELECTOR) {
 
+      env.IMAGE_TAG = params.TAG
+      env.REGISTRY_ENDPOINT = REGISTRY_ENDPOINT
       env.SONAR_URL = SONAR_URL
 
       deleteDir()
@@ -47,6 +50,11 @@ catchError {
           sh 'mvn package -DskipTests'
         }
       }
+
+      sh 'docker tag learnmate-api-web:latest ${REGISTRY_ENDPOINT}/learnmate-api-web:${IMAGE_TAG}'
+      sh 'docker tag learnmate-api-web:latest ${REGISTRY_ENDPOINT}/learnmate-api-web:latest'
+      sh 'docker push ${REGISTRY_ENDPOINT}/learnmate-api-web:${IMAGE_TAG}'
+      sh 'docker push ${REGISTRY_ENDPOINT}/learnmate-api-web:latest'
 
     }
   }

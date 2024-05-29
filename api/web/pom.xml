@@ -23,7 +23,7 @@
   <parent>
     <groupId>software.btech.learnmate</groupId>
     <artifactId>api</artifactId>
-    <version>1.5.0</version>
+    <version>1.6.0-SNAPSHOT</version>
   </parent>
   <artifactId>web</artifactId>
   <name>LearnMate - API web</name>

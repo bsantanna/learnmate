@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./env.sh
+source ../env.sh
 
 kubectl create secret docker-registry btech-registry \
   --docker-server=secure.btech.software \

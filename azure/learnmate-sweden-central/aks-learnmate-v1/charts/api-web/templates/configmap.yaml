@@ -1,0 +1,9 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "learnmate-api-web.fullname" . }}
+  labels:
+    {{- include "learnmate-api-web.labels" . | nindent 4 }}
+data:
+  {{- toYaml .Values.properties | nindent 4 }}

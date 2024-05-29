@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./env.sh
+source ../env.sh
 
 az aks get-credentials \
   --name ${AZ_AKS_NAME}\

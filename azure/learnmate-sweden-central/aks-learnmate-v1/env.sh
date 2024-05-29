@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export AZ_AKS_NAME="aks-learnmate-v1"
+export AZ_AKS_APP_NAMESPACE="learnmate"
 export AZ_CLIENT_ID="?"
 export AZ_KEY_VAULT_NAME="key-vault-learnmate-v1"
 export AZ_KEY_VAULT_SOPS_KEY_NAME="aks-learnmate-v1-sops-key"

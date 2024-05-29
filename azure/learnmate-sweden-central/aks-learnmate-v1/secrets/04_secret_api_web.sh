@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./env.sh
+source ../env.sh
 
 kubectl create secret generic secret-api-web \
   --from-literal LEARNMATE_SEARCH_HOST=? \

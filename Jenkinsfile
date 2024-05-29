@@ -60,4 +60,28 @@ catchError {
   }
 
 
+  stage("Deploy Project") {
+    node(DEPLOY_NODE_SELECTOR) {
+
+      deleteDir()
+
+      checkout(
+        [
+          $class: 'GitSCM',
+          branches: [[name: "refs/tags/${params.TAG}"]],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [],
+          submoduleCfg: [],
+          userRemoteConfigs: [[url: ORIGIN_GIT_URL]]
+        ]
+      )
+
+      dir('azure/learnmate-sweden-central/aks-learnmate-v1/charts/api-web') {
+        sh "kubectl config set-context --current --namespace='learnmate'"
+        sh "helm upgrade --install learnmate-api-web ."
+      }
+
+    }
+  }
+
 }

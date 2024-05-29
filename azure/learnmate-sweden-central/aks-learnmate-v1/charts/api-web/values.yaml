@@ -1,0 +1,76 @@
+replicaCount: 1
+
+secretName: secret-api-web
+
+properties:
+
+image:
+  repository: secure.btech.software/learnmate-api-web
+  pullPolicy: Always
+  tag: ""
+
+imagePullSecrets:
+  - name: btech-registry
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+     kubernetes.io/ingress.class: nginx
+     cert-manager.io/issuer: "letsencrypt-staging"
+  hosts:
+    - host: learnmate.btech.software
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: learnmate-api-web-tls
+      hosts:
+        - learnmate.btech.software
+
+resources: {}
+
+livenessProbe:
+  httpGet:
+    path: /actuator/health/liveness
+    port: http
+readinessProbe:
+  httpGet:
+    path: /actuator/health/readiness
+    port: http
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 90
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

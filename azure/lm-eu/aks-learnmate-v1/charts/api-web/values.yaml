@@ -33,10 +33,10 @@ service:
 
 ingress:
   enabled: true
-  className: "nginx"
+  className: "webapprouting.kubernetes.azure.com"
   annotations:
-     kubernetes.io/ingress.class: nginx
-     cert-manager.io/issuer: "letsencrypt-prod"
+     kubernetes.io/ingress.class: "webapprouting.kubernetes.azure.com"
+     cert-manager.io/cluster-issuer: "letsencrypt-prod"
      cert-manager.io/http01-edit-in-place: "true"
   hosts:
     - host: learnmate.btech.software

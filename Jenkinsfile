@@ -76,7 +76,7 @@ catchError {
         ]
       )
 
-      dir('azure/learnmate-sweden-central/aks-learnmate-v1/charts/api-web') {
+      dir('azure/lm-eu/aks-learnmate-v1/charts/api-web') {
         sh "kubectl config set-context --current --namespace='learnmate'"
         sh "helm upgrade --install learnmate-api-web ."
       }

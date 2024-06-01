@@ -14,7 +14,7 @@ kubectl create secret generic secret-api-web \
 sops --encrypt \
   --encrypted-regex '^(data|stringData)$' \
   --azure-kv ${AZ_KEY_VAULT_SOPS_KEY_ID} \
-  secret.encoded.yml > secret-api-web.encrypted.yaml && \
+  secret.encoded.yaml > secret-api-web.encrypted.yaml && \
   rm secret.encoded.yaml
 
-sops --decrypt secret-api-web.encrypted.yaml | kubectl apply -f -
+sops --decrypt secret-api-web.encrypted.yaml | kubectl -n ${AZ_AKS_APP_NAMESPACE} apply -f -

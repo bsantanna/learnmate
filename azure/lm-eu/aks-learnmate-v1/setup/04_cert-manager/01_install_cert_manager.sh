@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-helm install \
+helm upgrade \
   cert-manager jetstack/cert-manager \
-  --namespace cert-manager \
+  --install \
   --create-namespace \
-  --version v1.14.5 \
+  --wait \
+  --namespace cert-manager \
   --set installCRDs=true
 
 echo 'kubectl get svc -n "cert-manager"' | bash -x

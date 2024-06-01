@@ -26,6 +26,7 @@
 - [Amazon OpenSearch Service Internal User Database](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac-http-auth.html)
 - [Pull an Image from a Private Registry](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
 - [Nginx Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+- [Azure - Managed NGINX ingress with the application routing add-on](https://learn.microsoft.com/en-us/azure/aks/app-routing?tabs=default%2Cdeploy-app-default)
 
 ### Security
 - [Encrypt your Kubernetes Secrets with Mozilla SOPS](https://www.thorsten-hans.com/encrypt-your-kubernetes-secrets-with-mozilla-sops/)
@@ -33,6 +34,7 @@
 - [Azure Key Vault CSI driver setup](https://azure.github.io/secrets-store-csi-driver-provider-azure/docs/demos/standard-walkthrough/)
 - [Cert manager installation](https://cert-manager.io/docs/installation/helm/)
 - [Cert manager Nginx Ingress](https://cert-manager.io/docs/tutorials/acme/nginx-ingress/)
+- [Deploy cert-manager on Azure Kubernetes Service (AKS) and use Let's Encrypt to sign a certificate for an HTTPS website](https://cert-manager.io/docs/tutorials/getting-started-aks-letsencrypt/)
 - [Okta dashboard](https://manage.auth0.com/dashboard/eu/foodmon)
 - [Okta Building API Applications - Resource Server](https://github.com/okta/okta-spring-boot?tab=readme-ov-file#building-api-applications---resource-server)
 - [Okta Auth0 Error Codes](https://auth0.com/docs/deploy-monitor/logs/log-event-type-codes)

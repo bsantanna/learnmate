@@ -2,11 +2,6 @@
 
 source ../env.sh
 
-az keyvault create \
-  -n ${AZ_KEY_VAULT_NAME} \
-  -g ${AZ_RESOURCE_GROUP} \
-  -l swedencentral
-
 az keyvault set-policy \
   -n ${AZ_KEY_VAULT_NAME} \
   -g ${AZ_RESOURCE_GROUP} \
